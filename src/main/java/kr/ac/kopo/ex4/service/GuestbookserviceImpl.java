@@ -34,7 +34,6 @@ public class GuestbookserviceImpl implements GuestbookService{
         Pageable pageable = requestDTO.getPageable(Sort.by("gno").descending());
         Page<Guestbook> result = repository.findAll(pageable);
         Function<Guestbook, GuestbookDTO> fn = (entity -> entityToDTO(entity));
-
         return new PageResultDTO<>(result, fn);
     }
 }
