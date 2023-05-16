@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/questbook")
+@RequestMapping("/guestbook")
 @Log4j2
 @RequiredArgsConstructor
 public class GuestBookController {
     private final GuestbookService service;
     @GetMapping("/")
     public String index(){
-        return "redirect:/questbook/list";
+        return "redirect:/guestbook/list";
     }
     @GetMapping({"/list"})
     public void list(PageRequestDTO pageRequestDTO, Model model){
